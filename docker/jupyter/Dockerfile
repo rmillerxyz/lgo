@@ -20,9 +20,9 @@ RUN mkdir -p $LGOPATH
 
 # Add a non-root user with uid:1000 to follow the convention of mybinder to use this image from mybinder.org.
 # https://mybinder.readthedocs.io/en/latest/dockerfile.html
-ARG NB_USER=gopher
-ARG NB_UID=1000
-ENV HOME /home/${NB_USER}
+#ARG NB_USER=gopher
+#ARG NB_UID=1000
+#ENV HOME /home/${NB_USER}
 RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
