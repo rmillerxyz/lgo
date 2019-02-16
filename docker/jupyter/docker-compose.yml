@@ -3,6 +3,11 @@ version: "3.3"
 
 services:
   jupyter:
+    # configure some environment variables
+    environment:
+      - NB_USER
+      - NB_UID
+      - HOME
     build:
       context: .
     # To use a different port of host, change the first 8888.
@@ -11,4 +16,7 @@ services:
     volumes:
       - type: "bind"
         source: ./../../examples
-        target: /examples
+        target: ${HOME}/Notebooks/lgo-examples
+      - type: "bind"
+        source: ./../../../Notebooks
+        target: ${HOME}/Notebooks
