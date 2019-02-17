@@ -16,3 +16,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 else
     echo $url
 fi
+
+sleep 4
+docker-compose exec jupyter jupyter notebook list
